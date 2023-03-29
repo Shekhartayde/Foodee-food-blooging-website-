@@ -8,7 +8,7 @@ import geoCoder from "../utils/geocoder.js"
 export const getAllPosts=async(req,res)=>{
     let post
     try {
-        post=await Post.find().populate('user')
+        post=await Post.find().populate('user').sort('-postingDate')
     } catch (error) {
         return console.log(error)
     }
